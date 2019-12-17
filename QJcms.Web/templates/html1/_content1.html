@@ -1,0 +1,37 @@
+﻿<div class="ctn-left">
+    <div class="ctnlt">
+        <div class="ctnltit1">工业应用</div>
+        <div class="ctnls">
+            <ul id="accordion" class="accordion">
+                <%set DataTable plist=get_category_list("case",0)%>
+                <%loop ancdrp plist%>
+                <li>
+                    <a href='<%linkurl("case_lb",{ancdrp[id]})%>'>
+                        <div class="link">
+
+                            <span><img src="<%templateskin%>/images/xsj.png" /></span>
+                            {ancdrp[title]}
+
+                        </div>
+                    </a>
+                </li>
+                <%/loop%>
+            </ul>
+        </div>
+    </div>
+    <%template src="_lxwm.html"%>
+</div>
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>

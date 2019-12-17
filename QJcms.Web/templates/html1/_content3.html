@@ -1,0 +1,21 @@
+﻿<div class="ctn-left">
+    <div class="ctnlt">
+        <div class="ctnltit1">低氮锅炉</div>
+        <div class="ctnls">
+            <ul id="accordion" class="accordion">
+                <%set DataTable plist=get_article_list("boiler",0,"")%>
+                <%loop ancdrp plist%>
+                <li>
+                    <a href='<%linkurl("boiler",{ancdrp[id]})%>'>
+                        <div class="link">
+                            <span><img src="<%templateskin%>/images/xsj.png" /></span>
+                            {ancdrp[title]}
+                        </div>
+                    </a>
+                </li>
+                <%/loop%>
+            </ul>
+        </div>
+    </div>
+    <%template src="_lxwm.html"%>
+</div>

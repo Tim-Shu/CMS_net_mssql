@@ -1,0 +1,66 @@
+<div class="header">
+    <div class="wrap" style="position:relative;">
+        <div class="logo1"><img src="<%templateskin%>/images/logo1.png" /></div>
+        <div class="logo2"><img src="<%templateskin%>/images/logo2.png" /></div>
+        <div class="header-right">
+            <div class="search">
+                <div class="search1">产品搜索<span><img src="<%templateskin%>/images/xx.png" /></span></div>
+                <input type="text" id="keywords" name="keywords" placeholder="请输入关键字" required="" onkeydown="if (event.keyCode == 13) { SiteSearch('{config.webpath}search.aspx', '#keywords', 'product'); return false };" />
+                <button type="submit" onclick="SiteSearch('{config.webpath}search.aspx', '#keywords', 'product'); return false"></button>
+            </div>
+            <div class="tel1">24小时免费服务热线：<span><%=get_article_title(220)%></span></div>
+        </div>
+        <div class="zd">
+        <a href="javascript:void(0);" onclick="AddFavorite('我的网站',location.href)">收藏本站</a>|
+        <a href="javascript:void(0);" onclick="SetHome(this, 'http://*&&*&&.com');">设为首页</a></div>
+        <div class="logo">
+            <span class="icon-menu hidden-lg hidden-md"></span>
+            <!--移动端导航-->
+            <div class="sjdnav sjdnavhide hidden-lg hidden-md">
+                <ul class="list-inline">
+                    <li><a href='<%linkurl("index")%>'>首页</a></li>
+                    <li><a href='<%linkurl("product")%>'>产品总览</a></li>
+                    <li><a href='<%linkurl("case")%>'>工业应用</a></li>
+                    <li><a href='<%linkurl("reform")%>'>节能改造</a></li>
+                    <li><a href='<%linkurl("boiler",1379)%>'>低氮锅炉</a></li>
+                    <li><a href='<%linkurl("service")%>'>维保服务</a></li>
+                    <li><a href='<%linkurl("about")%>'>企业简介</a></li>
+                    <li><a href='<%linkurl("contact")%>'>联系我们</a></li>
+                </ul>
+            </div>
+            <!--------------------------->
+        </div>
+    </div>
+</div>
+
+<div class="nav">
+    <div class="wrap" style="padding:0 2%;">
+        <ul class="nul">
+            <li class="nli"><a href='<%linkurl("index")%>'>首页</a></li>
+            <li class="nli"><a href='<%linkurl("product")%>'>产品总览</a></li>
+            <li class="nli"><a href='<%linkurl("case")%>'>工业应用</a></li>
+            <li class="nli">
+                <a href='<%linkurl("reform")%>'>节能改造</a>
+                <!--<ul>
+                    <li><a href="#">示范案例</a></li>
+                    <li><a href="#">示范案例</a></li>
+                    <li><a href="#">示范案例</a></li>
+                </ul>-->
+            </li>
+            <li class="nli"><a href='<%linkurl("boiler",79)%>'>低氮锅炉</a></li>
+            <li class="nli"><a href='<%linkurl("service")%>'>维保服务</a></li>
+            <li class="nli"><a href='<%linkurl("about")%>'>企业简介</a></li>
+            <li class="nli" style="background:none;"><a href='<%linkurl("contact")%>'>联系我们</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="swiper-containers aa">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"><a href="#"><div class="banner" style="background:url(<%templateskin%>/images/1.jpg) no-repeat center center; background-size:cover;"></div></a></div>
+        <div class="swiper-slide"><a href="#"><div class="banner" style="background:url(<%templateskin%>/images/2.jpg) no-repeat center center; background-size:cover;"></div></a></div>
+        <div class="swiper-slide"><a href="#"><div class="banner" style="background:url(<%templateskin%>/images/3.jpg) no-repeat center center; background-size:cover;"></div></a></div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination aa"></div>
+</div>

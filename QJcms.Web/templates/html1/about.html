@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <%template src="_header.html"%>
+</head>
+
+<body>
+    <%template src="_head.html"%>
+
+    <div class="ctn">
+        <div class="wrap">
+            <%template src="_content.html"%>
+            <div class="ctn-right">
+                <div class="crt"><div class="crtl">企业简介</div><div class="crtr">您现在的位置：首页>企业简介</div></div>
+                <div class="crb">
+                    <div class="about">
+                        <div class="abouttit">上海迎匠热能设备有限公司</div>
+                        <div class="abouttxt"><%=get_article_content("about")%></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%template src="_footer.html"%>
+</body>
+</html>

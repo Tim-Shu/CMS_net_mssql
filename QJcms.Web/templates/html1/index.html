@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <%template src="_header.html"%>
+</head>
+
+<body>
+    <%template src="_head.html"%>
+
+
+    <div class="row">
+
+        <div class="title01 text-center">
+            <ul class="list-unstyled qh text-center">
+                <%set DataTable caiplist=get_category_child_list("product",0)%>
+                <%loop caivadber caiplist%>
+                <li class=""><a href="javascript:;" class="text-center aa <%if caivadber__loop__id==1%>active<%/if%>">{caivadber[title]}</a></li>
+                <%csharp%>
+                if({caivadber__loop__id}>4) break;
+                <%/csharp%>
+                <%/loop%>
+                <li class=""><a href='<%linkurl("product")%>#p' class="text-center aa">更多</a></li>
+            </ul>
+            <script type="text/javascript">
+                            $(document).ready(function () {
+                                $(".title01 li a").click(function () {
+                                    $(this).addClass("active").parent().siblings("li").children("a").removeClass("active");
+                                });
+                            });
+            </script>
+        </div>
+        <div class="clearfix"></div>
+        <div class="qh1">
+            <%loop civadber1 caiplist%>
+            <div class="lunbo lunbo{civadber1__loop__id-1} text-center">
+                <div id="owl-demo{civadber1__loop__id-1}" class="owl-carousel">
+                    <%set DataTable ciplist2=get_article_list("product",{strtoint({civadber1[id]})},8,"")%>
+                    <%loop civadber2 ciplist2%>
+                    <%if civadber2__loop__id%2==1%>
+                    <div class="item col-lg-3 col-md-3 col-sm-4 col-xs-6 hidden-xs">
+                        <div class="lunbobox">
+                            <a href='<%linkurl("products",{civadber2[id]})%>#p1'>
+                                <div class="qhpic" style="background:url({civadber2[img_url]}) no-repeat; background-position:50% 50%; background-size:contain;">
+                                    <img src="<%templateskin%>/<%templateskin%>/images/mb.png" class="img-responsive" />
+                                </div>
+                                <p>{civadber2[title]}</p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!--下面div包含的是手机样式超出隐藏-->
+                    <%else%>
+                    <div class="item col-lg-3 col-md-3 col-sm-4 col-xs-6  hidden-lg hidden-md hidden-sm more">
+                        <div class="lunbobox">
+                            <a href='<%linkurl("products",{civadber2[id]})%>#p1'>
+                                <div class="alpic" style="background:url({civadber2[img_url]}) no-repeat; background-position:50% 50%; background-size:contain;">
+                                    <img src="<%templateskin%>/<%templateskin%>/images/mb.png" class="img-responsive" />
+                                </div>
+                                <p>{civadber2[title]}</p>
+                            </a>
+                        </div>
+                    </div>
+                    <%/if%>
+                    <%/loop%>
+                </div>
+            </div>
+            <%/loop%>
+        </div>
+    </div>
+
+    <div class="content wow slideInUp">
+        <div class="wrap">
+            <!--产品总览-->
+            <div class="content-left">
+                <div class="lmbj"><img src="<%templateskin%>/images/lmbj.png" /></div>
+                <div class="titles">
+                    <div class="title text-uppercase"><span>产品总览</span>products qverview</div>
+                </div>
+                <div class="cpzl">
+                    <ul class="cpyc">
+                        <%set DataTable an1list=get_category_child_list("product",0)%>
+                        <%loop ancpdr an1list%>
+                        <li>
+                            <ul class="cpec">
+                                <a href='<%linkurl("product_lb",{ancpdr[id]})%>'>
+                                    <div class="titlex">
+                                        <span><img src="<%templateskin%>/images/lis.png" /></span>
+                                        {ancpdr[title]}
+                                    </div>
+                                </a>
+                                <%set DataTable an2list=get_category_child_list("product",{strtoint({ancpdr[id]})})%>
+                                <%loop apncpdr an2list%>
+                                <a href='<%linkurl("product_lb",{apncpdr[id]})%>'>
+                                    <li>
+                                        <b>
+                                            <img src="<%templateskin%>/images/li1.png" class="li1" />
+                                            <img src="<%templateskin%>/images/li2.png" class="li2" />
+                                        </b>
+                                        <span>{apncpdr[title]}</span>
+                                    </li>
+                                </a>
+                                <%/loop%>
+                            </ul>
+                        </li>
+                        <%/loop%>
+                    </ul>
+                </div>
+                <a href='<%linkurl("product")%>'><div class="more">查看更多<span><img src="<%templateskin%>/images/xxjt.png" /></span></div></a>
+            </div>
+
+            <div class="content-right">
+                <!--工业应用-->
+                <div class="gyyy">
+                    <div class="titles">
+                        <div class="title text-uppercase"><span>工业应用</span>industry application</div>
+                    </div>
+                    <div class="gy">
+                        <%set DataTable list4=get_article_list("case",12,"status=0 and is_red=1")%>
+                        <%loop abcdr4 list4%>
+                        <a href='<%linkurl("cases",{abcdr4[id]})%>'>
+                            <div class="gylist">
+                                <div class="gyimg">
+                                    <div class="gyimg1" style="background:url({abcdr4[img_url]}) no-repeat 50% 50%;  background-size:cover;">
+                                        <div class="gyimg2"></div>
+                                    </div>
+                                </div>
+                                <div class="gytit">{abcdr4[title]}</div>
+                            </div>
+                        </a>
+                        <%/loop%>
+                    </div>
+                </div>
+                <!--节能改造-->
+                <div class="jngz">
+                    <div class="titles">
+                        <div class="title text-uppercase"><span>节能改造</span>energy saving</div>
+                    </div>
+                    <div class="jn">
+                        <%set DataTable list5=get_article_list("reform",1,"status=0 and is_top=1")%>
+                        <%loop abcdr5 list5%>
+                        <div class="jntit"><span><img src="<%templateskin%>/images/lis.png" /></span>{abcdr5[title]}</div>
+                        <div class="jnimg" style="background:url(<%templateskin%>/images/jnimg.jpg) no-repeat 50% 50%; background-size:cover;">
+                            <div class="jnimg1"></div>
+                        </div>
+                        <%/loop%>
+                        <ul class="jg">
+                            <%set DataTable list6=get_article_list("reform",6,"status=0 and is_red=1")%>
+                            <%loop abcdr6 list6%>
+                            <a href='<%linkurl("reforms",{abcdr6[id]})%>'><li><span><img src="<%templateskin%>/images/lis.png" /></span>{abcdr6[title]}</li></a>
+                            <%/loop%>
+                        </ul>
+                    </div>
+                    <a href='<%linkurl("reform")%>'><div class="more">查看更多<span><img src="<%templateskin%>/images/xxjt.png" /></span></div></a>
+                </div>
+                <!--低氮锅炉-->
+                <div class="ddgl">
+                    <div class="titles">
+                        <div class="title text-uppercase"><span>低氮锅炉</span>a low nitrogen boiler</div>
+                    </div>
+                    <div class="dg">
+                        <ul class="cpec">
+                            <%set DataTable list7=get_article_list("boiler",10,"status=0 and is_red=1")%>
+                            <%loop abcdr7 list7%>
+                            <a href='<%linkurl("boiler",{abcdr7[id]})%>'><li><b><img src="<%templateskin%>/images/li1.png" class="li1" /><img src="<%templateskin%>/images/li2.png" class="li2" /></b><span>{abcdr7[title]}</span></li></a>
+                            <%/loop%>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <%template src="_footer.html"%>
+</body>
+</html>

@@ -1,0 +1,23 @@
+﻿<div class="ctn-left">
+    <div class="ctnlt">
+        <div class="ctnltit1">节能改造</div>
+        <div class="ctnls">
+            <ul id="accordion" class="accordion">
+                <%set DataTable plist=get_category_list("reform",0)%>
+                <%loop ancdrp plist%>
+                <li>
+                    <a href='<%linkurl("reform_lb",{ancdrp[id]})%>'>
+                        <div class="link">
+
+                            <span><img src="<%templateskin%>/images/xsj.png" /></span>
+                            {ancdrp[title]}
+
+                        </div>
+                    </a>
+                </li>
+                <%/loop%>
+            </ul>
+        </div>
+    </div>
+    <%template src="_lxwm.html"%>
+</div>

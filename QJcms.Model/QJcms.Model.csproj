@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{59E451EA-4E7A-408A-9F5C-36F2AC8D90AD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QJcms.Model</RootNamespace>
+    <AssemblyName>QJcms.Model</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="order\city.cs" />
+    <Compile Include="order\district.cs" />
+    <Compile Include="order\province.cs" />
+    <Compile Include="tools\search_keyword.cs" />
+    <Compile Include="tools\feedback.cs" />
+    <Compile Include="tools\script_list.cs" />
+    <Compile Include="tools\advert.cs" />
+    <Compile Include="tools\advert_banner.cs" />
+    <Compile Include="article\article.cs" />
+    <Compile Include="article\article_albums.cs" />
+    <Compile Include="article\article_attach.cs" />
+    <Compile Include="article\article_attribute_field.cs" />
+    <Compile Include="article\article_category.cs" />
+    <Compile Include="article\article_category_albums.cs" />
+    <Compile Include="article\article_comment.cs" />
+    <Compile Include="article\article_images_size.cs" />
+    <Compile Include="system\channel.cs" />
+    <Compile Include="system\channel_category.cs" />
+    <Compile Include="system\channel_field.cs" />
+    <Compile Include="order\express.cs" />
+    <Compile Include="tools\link.cs" />
+    <Compile Include="system\mail_template.cs" />
+    <Compile Include="manager\manager.cs" />
+    <Compile Include="manager\manager_log.cs" />
+    <Compile Include="manager\manager_role.cs" />
+    <Compile Include="manager\manager_role_value.cs" />
+    <Compile Include="system\navigation.cs" />
+    <Compile Include="tools\online_service.cs" />
+    <Compile Include="tools\online_service_group.cs" />
+    <Compile Include="order\orders.cs" />
+    <Compile Include="order\order_config.cs" />
+    <Compile Include="order\order_goods.cs" />
+    <Compile Include="order\payment.cs" />
+    <Compile Include="system\plugin.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="order\shopping_cart.cs" />
+    <Compile Include="system\sms_template.cs" />
+    <Compile Include="system\sys_config.cs" />
+    <Compile Include="system\template.cs" />
+    <Compile Include="system\url_rewrite.cs" />
+    <Compile Include="tools\seo_list.cs" />
+    <Compile Include="user\users.cs" />
+    <Compile Include="user\user_amount_log.cs" />
+    <Compile Include="user\user_code.cs" />
+    <Compile Include="user\user_config.cs" />
+    <Compile Include="user\user_groups.cs" />
+    <Compile Include="user\user_group_price.cs" />
+    <Compile Include="user\user_login_log.cs" />
+    <Compile Include="user\user_message.cs" />
+    <Compile Include="user\user_oauth.cs" />
+    <Compile Include="user\user_oauth_app.cs" />
+    <Compile Include="user\user_point_log.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\QJcms.Common\QJcms.Common.csproj">
+      <Project>{20908989-7773-493B-B1BD-764BE322A935}</Project>
+      <Name>QJcms.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

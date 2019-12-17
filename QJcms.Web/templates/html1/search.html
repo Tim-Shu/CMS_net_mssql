@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <%template src="_header.html"%>
+</head>
+
+<body>
+    <%template src="_head.html"%>
+
+    <div class="ctn">
+        <div class="wrap">
+            <%template src="_content.html"%>
+            <div class="ctn-right">
+                <div class="crt"><div class="crtl">搜索结果</div><div class="crtr">您现在的位置：首页>搜索结果</div></div>
+                <div class="crb">
+                    <%set (DataTable){list}=get_search_list(9, out totalcount)%>
+                    <%set (string){pagelist}=get_page_link(9, page, totalcount, "search.aspx?keyword=" + Server.UrlEncode(keyword) + "&page=__id__")%>
+                    <%loop dr list%>
+                    <div class="cplist">
+                        <a href="{dr[link_url]}">
+                            <div class="cplist1">
+                                <div class="cpimg">
+                                    <div class="cpimg1" style="background:url({dr[img_url]}) no-repeat 50% 50%; background-size:cover;">
+                                        <div class="cpimg2"></div>
+                                    </div>
+                                </div>
+                                <div class="cptit">{dr[title]}</div>
+                            </div>
+                        </a>
+                    </div>
+                    <%/loop%>
+                    <%if {totalcount}==0%>
+                    <div style="margin-top:15px;text-align:center;color:red; tab-size:8px;">
+                        搜索结果不存在，请重新输入关键字！
+                    </div>
+                    <%else%>
+                    <div style="margin-top:15px;text-align:center;color:red; tab-size:8px;">
+                        搜索关键字<span>[  {keyword}  ]</span>共<span>{totalcount}</span>条记录
+                    </div>
+                    <%/if%>
+                </div>
+                <!--分页-->
+                <div class="scott" style="padding-top: 20px;">
+                    <span>
+                        {pagelist}
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <%template src="_footer.html"%>
+</body>
+</html>

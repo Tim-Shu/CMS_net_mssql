@@ -1,0 +1,190 @@
+<div class="footer wow slideInUp">
+    <div class="wrap">
+        <div class="footer1">
+            <div class="ft">
+                <ul class="ful">
+                    <li class="ftit">产品总览</li>
+                    <%set DataTable anflist=get_category_child_list("product",0)%>
+                    <%loop anfcpdr anflist%>
+                    <a href='<%linkurl("product_lb",{anfcpdr[id]})%>'><li>{anfcpdr[title]}</li></a>
+                    <%/loop%>
+                </ul>
+            </div>
+            <div class="ft">
+                <ul class="ful">
+                    <li class="ftit">工业应用</li>
+                    <%set DataTable anclist=get_category_child_list("case",0)%>
+                    <%loop anccpdr anclist%>
+                    <a href='<%linkurl("case_lb",{anccpdr[id]})%>'><li>{anccpdr[title]}</li></a>
+                    <%/loop%>
+                </ul>
+            </div>
+            <div class="ft">
+                <ul class="ful">
+                    <li class="ftit">节能改造</li>
+                    <%set DataTable anrlist=get_category_child_list("reform",0)%>
+                    <%loop anrcpdr anrlist%>
+                    <a href='<%linkurl("reform_lb",{anrcpdr[id]})%>'><li>{anrcpdr[title]}</li></a>
+                    <%/loop%>
+                </ul>
+            </div>
+            <div class="ft">
+                <ul class="ful">
+                    <li class="ftit">低氮锅炉</li>
+                    <%set DataTable lbcsist=get_article_list("boiler",0,"")%>
+                    <%loop abscdder lbcsist%>
+                    <a href='<%linkurl("boiler",{abscdder[id]})%>'><li>{abscdder[title]}</li></a>
+                    <%/loop%>
+                </ul>
+            </div>
+            <div class="ft" style="border:none;">
+                <ul class="ful">
+                    <li class="ftit">维保服务</li>
+                    <%set DataTable lcsist=get_article_list("service",0,"")%>
+                    <%loop ascdder lcsist%>
+                    <a href='<%linkurl("service")%>'><li>{ascdder[title]}</li></a>
+                    <%/loop%>
+                </ul>
+            </div>
+            <div class="ft">
+                <ul class="ful">
+                    <li class="ftit">联系我们</li>
+                    <a href='<%linkurl("contact")%>'><li>联系我们</li></a>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fbj"></div>
+
+<div class="cpyright wow slideInUp">
+    <div class="wrap">
+        版权所有 © 2017 上海迎匠热能设备有限公司 保留所有权利 <a href="http://www.miitbeian.gov.cn" style="color:#666" target="_blank">沪ICP备17044079号-1</a> <br /><a href="" style="color:#666" target="_blank">[管理入口]</a>
+        <%=get_article_content("foot")%>
+
+    </div>
+</div>
+
+<div class="hot w100 hidden-lg hidden-md hidden-sm">
+    <div class="row">
+        <div class="col-xs-3 text-center no-padding">
+            <a href="tel:18916156641" class="no-decoration">
+                <span class="glyphicon glyphicon-earphone"></span>
+                <h6 class="no-margin">电话</h6>
+            </a>
+        </div>
+        <div class="col-xs-3 text-center no-padding">
+            <a target="_blank" href="mqqwpa://im/chat?chat_type=wpa&uin=000000&version=1&src_type=web&web_src=oicqzone.com" class="no-decoration">
+                <span class=""><img src="<%templateskin%>/images/qq.png" width="16" height="16" style="margin-bottom:3px; margin-top:2px;" /></span>
+                <h6 class="no-margin">消息</h6>
+            </a>
+        </div>
+        <div class="col-xs-3 text-center no-padding db-ewms">
+            <a class="no-decoration">
+                <span class="glyphicon glyphicon-qrcode"></span>
+                <h6 class="no-margin">二维码</h6>
+            </a>
+        </div>
+        <div class="col-xs-3 text-center no-padding">
+            <a class="no-decoration">
+                <span class="glyphicon glyphicon-share-alt"></span>
+                <h6 class="no-margin">分享</h6>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="dbbox hidden-sm hidden-md hidden-lg">
+    <div class="dbs ewm-box">
+        <div class="neirong">
+            <img src="<%=get_article_img_url(219)%>" alt="" />
+        </div>
+    </div>
+    <div class="dbs fenxiang-box">
+        <div class="neirong">
+            <div class="bdsharebuttonbox clearfix">
+                <div class="pull-left li"><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a></div>
+                <div class="pull-left li"><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a></div>
+                <div class="pull-left li"><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a></div>
+                <div class="pull-left li"><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a></div>
+                <div class="pull-left li"><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
+            </div>
+            <script>
+                window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "2", "bdMiniList": false, "bdPic": "", "bdStyle": "1", "bdSize": "32" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
+            </script>
+        </div>
+    </div>
+</div>
+<script>
+    $(".hot .col-xs-3").eq(2).click(function () {
+        if ($(".dbbox .dbs.ewm-box").is(':hidden')) {
+            $(".dbbox .dbs.ewm-box").slideDown();
+            $(".dbbox .dbs.fenxiang-box").slideUp();
+        } else {
+            $(".dbbox .dbs.ewm-box").slideUp();
+        }
+    })
+    $(".hot .col-xs-3").eq(3).find("a").click(function () {
+        if ($(".dbbox .dbs.fenxiang-box").is(':hidden')) {
+            $(".dbbox .dbs.fenxiang-box").slideDown();
+            $(".dbbox .dbs.ewm-box").slideUp();
+        } else {
+            $(".dbbox .dbs.fenxiang-box").slideUp();
+        }
+    })
+</script>
+
+<script src="<%templateskin%>/js/swiper.min.js"></script>
+<script src="<%templateskin%>/js/gundong.js"></script>
+<script src="<%templateskin%>/js/lrtk.js"></script>
+<script src="<%templateskin%>/js/nav.js"></script>
+<script src="<%templateskin%>/js/bases.js"></script>
+
+<!--客服-->
+<div class="dock hidden-xs" style="height: 296px; top: 200px;">
+    <ul class="icons">
+        <li class="up"><i></i></li>
+
+        <li class="im">
+            <i></i><p>
+                网站客服咨询<a href="http://wpa.qq.com/msgrd?v=3&amp;uin=000000&amp;site=qq&amp;menu=yes" target="_blank">客服1</a>
+            </p>
+        </li>
+
+        <li class="tel">
+            <i></i><p>
+                电话：<%=get_article_title(220)%><br>
+            </p>
+        </li>
+        <li class="wechat">
+            <i></i><p><img src="<%=get_article_img_url(219)%>" width="140" height="140" alt="扫描关注微信账号"></p>
+        </li>
+        <li class="down"><i></i></li>
+    </ul>
+    <a class="switch"></a>
+</div>
+<script>
+    $(function () {
+
+        $("ul.icons li").hover(function () {
+            $(this).addClass("active").siblings("li").removeClass("active");
+        })
+        $("ul.icons li").mouseout(function () {
+            $(this).removeClass("active");
+        })
+        $(".up").click(function () {
+            // $(document).scrollTop(0);
+            $('html,body').animate({ scrollTop: '0px' }, 500);
+        })
+        $(".down").click(function () {
+            var temp = $(document).height();
+            console.log(temp);
+            $('html,body').animate({ scrollTop: temp }, 500);
+            // $(document).scrollTop(temp);
+        })
+        $(".switch").click(function () {
+            $("div.dock").toggleClass("close");
+        })
+    })
+</script>
+

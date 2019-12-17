@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <%template src="_header.html"%>
+</head>
+
+<body>
+    <%template src="_head.html"%>
+
+    <div class="ctn">
+        <div class="wrap">
+            <%template src="_content2.html"%>
+            <div class="ctn-right">
+                <div class="crt"><div class="crtl">节能改造</div><div class="crtr">您现在的位置：首页>{model.title}</div></div>
+                <div class="crb">
+                    <%set DataTable list=get_article_list("reform", category_id, page, "status=0", out totalcount, out pagelist, "reform_lb", category_id, "__id__")%>
+                    <%foreach (DataRow acpabdr in list.Rows)%>
+                    <div class="cplist">
+                        <a href='<%linkurl("reforms",{acpabdr[id]})%>'>
+                            <div class="cplist1">
+                                <div class="cpimg">
+                                    <div class="cpimg1" style="background:url({acpabdr[img_url]}) no-repeat 50% 50%; background-size:cover;">
+                                        <div class="cpimg2"></div>
+                                    </div>
+                                </div>
+                                <div class="cptit">{acpabdr[title]}</div>
+                            </div>
+                        </a>
+                    </div>
+                    <%/loop%>
+                </div>
+                <!--分页-->
+                <div class="scott" style="padding-top: 20px;">
+                    <span>
+                        {pagelist}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%template src="_footer.html"%>
+</body>
+</html>

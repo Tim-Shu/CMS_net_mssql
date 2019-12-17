@@ -1,0 +1,316 @@
+http://ocr.wdku.net/   QQ：ahbkvezbayvxbbhc   mailto
+
+http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&entyId=2012061918095336
+http://webscan.360.cn/index/checkwebsite/url/www.centorisi.com
+
+<base target="_blank">
+
+<%=get_article_content("cpbj")%>   
+
+<%=get_article_img_url(502)%>
+
+<%=get_article_title(502)%>
+
+<%=get_category_title(1,"")%>
+
+{model.fields[name]}
+
+======================================================
+   <%foreach(QJcms.Model.article_attach modelt in get_artice_attach(firstID))%>
+  <%foreach(QJcms.Model.article_albums modelt in get_artice_albums(firstID))%>
+                    <div class="swiper-slide" >
+                        <a href="##">
+                            <div class="pic">
+                                <div class="fw_img"></div>{modelt.file_path}
+                                <img class="img_cover tr" src="{modelt.thumb_path}" />
+                            </div>
+                            <div class="h1 tr">{modelt.remark}</div>
+                        </a>
+                    </div>
+  <%/foreach%>
+======================time================================
+
+    <%datetostr({acpabdr[add_time]},yyyy-MM-dd)%>
+<%datetostr({model.add_time},yyyy-MM-dd)%>
+
+&nbsp;
+======================end list================================
+
+{civadber1__loop__id-1}
+<%csharp%>
+   if({accdbdr__loop__id}>5) break;
+<%/csharp%>
+
+<%if caivadber__loop__id==1%>active<%/if%>
+=======================备案===============================
+
+http://www.miitbeian.gov.cn
+http://www.beian.miit.gov.cn/
+
+=========================类别推荐=============================
+-webkit-user-select:none; 
+
+<%if {strtoint({an2cpdr[is_hot]})}==1%>
+<%/if%>
+
+====================seo==================================
+    <title>{site.seo_title}</title> 
+    <meta name="keywords" content="{site.seo_keyword}" />
+    <meta name="description" content="{site.seo_description}" />
+
+
+    <title>{model.seo_title}</title>
+    <meta name="keywords" content="{model.seo_keywords}" />
+    <meta name="description" content="{model.seo_description}" />
+
+
+    <%=get_seo_body("seo")%>
+
+======================================================
+
+tencent://message/?uin=491469607&Site=Google&Menu=yes
+
+mqqwpa://im/chat?chat_type=wpa&uin=491469607&version=1&src_type=web&web_src=oicqzone.com 
+
+http://service.weibo.com/share/share.php?ppkey=&title=&url=&pic=&searchPic=false&style=simple
+
+
+
+
+
+<%if civadber1__loop__id==1%>selectTag<%/if%>
+
+===========================相册===========================
+
+ <%foreach(QJcms.Model.article_albums modelt in model.albums)%>
+                                                <li><img src="{modelt.original_path}"></li>
+                                                <%/foreach%>       {modelt.file_path}file_name
+
+========================active==============================
+
+<script type="text/javascript">
+                        var urlstr = location.href;
+                        //alert(urlstr);
+                        var urlstatus = false;
+                        $(".hd ul li").each(function () {
+                            if ((urlstr + '/').indexOf($(this).find('a').attr('href')) > -1 && $(this).find(a').attr('href') !='') {
+                                $(this).addClass('on'); urlstatus = true;
+                            } else {
+                                $(this).removeClass('on');
+                            }
+                        });
+                        if (!urlstatus) { $(".hd ul li").eq(0).addClass('on'); }
+                </script>
+
+
+<script type="text/javascript">
+                        var urlstr = location.href;
+                        //alert(urlstr);
+                        var urlstatus = false;
+                        $(".linn a").each(function () {
+                            if ((urlstr + '/').indexOf($(this).attr('href')) > -1 && $(this).attr('href') !='') {
+                                $(this).addClass('act'); urlstatus = true;
+                            } else {
+                                $(this).removeClass('act');
+                            }
+                        });
+                        if (!urlstatus) { $(".linn a").eq(0).addClass('act'); }
+</script>
+
+//超出隐藏
+text-overflow: ellipsis;
+white-space: nowrap;
+overflow: hidden;
+//width:100%
+======================强制高================================
+<script type="text/javascript">
+    $(function () {
+        $('.casedata .nimg').css({ "max-width": "100%", "height": "auto" });
+    })
+</script>
+
+<script type="text/javascript">
+    $(function () {
+        $('.cpxq table').css({ "width": "100%", "height": "auto"});
+        $('.cpxq table td').css({ "word-break": "break-all" });
+        function vivw() {
+            var pmW = $(window).width();
+            var tablew = $('.cpxq table').width();
+            if (pmW <= 340) {
+                $('.cpxq table tr').addClass('on');
+                $('.cpxq table tr').eq(0).removeClass('on');
+                $('.cpxq table tr.on').find('td').css({ "width":"110px", "max-width":"110px" });
+            }
+        }
+        vivw();
+        $(window).resize(function () {
+            vivw()
+        })
+    })
+</script>
+============================搜索==========================
+<script language="Javascript">
+function setVal(Obj)
+{
+    try
+    {
+        document.getElementById('setVal').value = Obj.innerHTML;
+
+    }
+    catch(E)
+    {
+    }
+    finally
+    {
+        return false;
+    }
+}
+</script>
+<body>
+    <input type="text" value="" id="setVal" />
+    <a href="#" onclick="return setVal(this)">1111111</a>
+    <a href="#" onclick="return setVal(this)">2222222</a>
+    <a href="#" onclick="return setVal(this)">3333333</a>
+</body>
+
+
+==========================title=======================
+ protected string get_article_title(int id)
+        {
+            if (id < 1)
+                return string.Empty;
+            BLL.article bll = new BLL.article();
+            if (bll.Exists(id))
+            {
+                return bll.GetModel(id).title;
+            }
+            return string.Empty;
+        }
+======================================================
+#region 相册通用方法
+        protected List<Model.article_albums> get_artice_albums(int id) 
+        { 
+            List<Model.article_albums> ls=new List<Model.article_albums>();
+            BLL.article bll=new BLL.article();
+            if (bll.Exists(id))
+            {
+                return bll.GetModel(id).albums;
+
+            }
+                return ls;
+        
+          }
+
+        #endregion
+        #region 附件通用方法==========================================
+        protected List<Model.article_attach> get_artice_attach(int id)
+        {
+            List<Model.article_attach> ls = new List<Model.article_attach>();
+            BLL.article bll = new BLL.article();
+            if (bll.Exists(id))
+            {
+                return bll.GetModel(id).attach;
+
+            }
+            return ls;
+
+        }
+
+        #endregion
+========================物流==============================
+<h3>
+	物流查询
+</h3>
+<iframe src="http://www.kuaidi100.com/frame/app/index2.html" width="800" height="400" frameborder="0">
+</iframe>
+==========================================================
+                        <%set DataTable list=get_article_list(channel, category_id, pagesize, page, "status=0", out totalcount, out pagelist, "xinglu", category_id, "__id__")%>
+                        <%foreach (DataRow dr in list.Rows)%>
+                        <%set string path=get_first_attach({strtoint({dr[id]})})%>
+                        <div class="in_pic_con">
+                            <div class="left_img">
+                                <a href="{path}" title="{dr[title]}" target="_blank" class="map">
+                                <span class="edge"></span>
+                                <img src="{dr[img_url]}" onload="AutoResizeImage(162,113,this)" height="90" width="120">
+                                </a>
+                            </div>
+                            <div class="right_font"><h1><a href="{path}">{dr[title]}</a></h1>
+                            <p>{dr[zhaiyao]}</p>
+                            <label><a href="{path}">点击下载</a></label></div>
+                        </div>
+
+                        <%/foreach%>
+========================next============================= 
+                            <div class="cpfy">
+                                <span>
+                                    <%set (string){next}=get_prevandnext_article("cases", -1, "", 0)%>{next}
+                                </span>
+                                <span>
+                                    <%set (string){prev}=get_prevandnext_article("cases", 1, "", 0)%><%if {prev}==""%>没有了<%else%>{prev}<%/if%>
+                                </span>
+                            </div>
+
+.cpfy{ width:98%; margin:0 2%; border-top:1px solid #dfdfdf; padding:20px 10%; text-align:center; overflow:hidden;}
+.cpfy a{ display:block; width:44%; float:left; border:1px solid #000; margin:0 3%; text-align:center; font-size:14px; line-height:30px; color:#000;}
+.cpft
+ a span{color:Red; background-color:Yellow;}
+
+.cpfy a:hover{ background:#000; color:#fff;}
+
+
+        <!--导航下拉结束-->
+        <script type="text/javascript">
+            var urlstr = location.href;
+            //alert(urlstr);
+            var urlstatus = false;
+            $(".nLi a").each(function () {
+                if ((urlstr + '/').indexOf($(this).attr('href')) > -1 && $(this).attr('href') != '') {
+                    $(this).addClass('cur'); urlstatus = true;
+                } else {
+                    $(this).removeClass('cur');
+                }
+            });
+            if (!urlstatus) { $(".nLi a").eq(0).addClass('cur'); }
+        </script>
+
+
+
+
+    <!--301-->
+    <rewrite>
+      <rules>
+        <rule name="Redirect" stopProcessing="true">
+          <match url=".*" />
+          <conditions>
+            <add input="{HTTP_HOST}" pattern="^shanghaijuyi.com.cn$" />
+          </conditions>
+          <action type="Redirect" url="http://www.shanghaijuyi.com.cn/{R:0}" redirectType="Permanent" />
+        </rule>
+      </rules>
+    </rewrite>
+    <!--404-->
+    <httpErrors errorMode="Custom">
+      <remove statusCode="404" subStatusCode="-1" />
+      <error statusCode="404" subStatusCode="-1" path="404.html" responseMode="File" />
+    </httpErrors>
+
+
+
+<script language="Javascript"> 
+document.oncontextmenu=new Function("event.returnValue=false"); 
+document.onselectstart=new Function("event.returnValue=false"); 
+</script> 
+<noscript><iframe src="/blog/*.html>";</iframe></noscript>
+
+
+<%if (HttpContext.Current.Request.Url.Host=="shjuelue.com"){Response.Redirect("http://www.shjuelue.com/");}%>
+
+ <%set int firstID=get_first_parent_id(category_id)%>
+<%if firstID=={strtoint({adder_pr[id]})}%>on<%/if%>
+
+<video width="100%" height="auto" controls>
+<source src="{modelt.file_path}" type="video/mp4" />
+</video>
+
+<!--禁用所有缓存-->
+<requestCaching disableAllCaching="true"></requestCaching>

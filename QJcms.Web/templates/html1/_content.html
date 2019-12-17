@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <%template src="_header.html"%>
+</head>
+<body>
+    <%template src="_head.html"%>
+
+    <div class="content-wrap indexbg clearfix">
+        <!--服务项目-->
+        <div class="hotpro-wrap">
+            <div class="container-fluid">
+                <div class="title-line">
+                    <img src="<%templateskin%>/images/index-tit1.png" alt="">
+                </div>
+                <div class="hotpro-con">
+                    <div class="hotpro-carousel">
+                        <%set DataTable p_list=get_article_list("product",8,"status=0 and is_red=1")%>
+                        <%loop p_adder p_list%>
+                        <a href='<%linkurl("products",{p_adder[id]})%>#main' class="item">
+                            <div class="picbox">
+                                <div class="pic imgs text-center" style="background:#fff; overflow:hidden;">
+                                    <img src="{p_adder[img_url]}" alt="" style="max-width: 100%; max-height: 100%;">
+                                </div>
+                            </div>
+                            <div class="btit">{p_adder[title]}</div>
+                        </a>
+                        <%/loop%>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--公司简介-->
+        <div class="about-wrap">
+            <div class="container-fluid">
+                <div class="title-line">
+                    <img src="<%templateskin%>/images/index-tit2.png" alt="">
+                </div>
+                <div class="about-con">
+                    <a href='<%linkurl("about",1515)%>#main' class="clearfix">
+                        <div class="picbox">
+                            <div class="pic"><img src="<%=get_article_img_url(1401)%>" alt=""></div>
+                        </div>
+                        <div class="conbox">
+                            <div class="tit">上海待武膜结构有限公司<span></span></div>
+                            <div class="line"></div>
+                            <div class="con">
+                                <%=get_article_content("iabout")%>
+                            </div>
+                            <div class="morebtn">查看详情+</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!--案例展示-->
+        <div class="product-wrap">
+            <div class="container-fluid">
+                <div class="title-line">
+                    <img src="<%templateskin%>/images/index-tit3.png" alt="">
+                </div>
+                <div class="product-con">
+                    <div class="row">
+                        <%set DataTable c_list=get_article_list("case",8,"status=0 and is_red=1")%>
+                        <%loop c_adder c_list%>
+                        <div class="col-md-3 col-sm-3 col-xs-6">
+                            <div class="plist clearfix">
+                                <a href='<%linkurl("cases",{c_adder[id]})%>#main' class="clearfix">
+                                    <div class="picbox">
+                                        <div class="pic imgs text-center" style="background:#fff; overflow:hidden;">
+                                            <img src="{c_adder[img_url]}" alt="" style="max-width: 100%; max-height: 100%;">
+                                        </div>
+                                    </div>
+                                    <div class="conbox">
+                                        <div class="tit-more clearfix">
+                                            <div class="tit lt">{c_adder[title]}</div>
+                                            <div class="morebtn rt">MORE+</div>
+                                        </div>
+                                        <div class="con"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <%/loop%>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--合作伙伴-->
+        <!--<div class="partner-wrap">
+            <div class="container-fluid">
+                <div class="title-line">
+                    <img src="<%templateskin%>/images/index-tit4.png" alt="">
+                </div>
+                <div class="partner-con">
+                    <div class="pbox">
+                        <div class="row">
+                            <%foreach(QJcms.Model.article_albums modelt in get_artice_albums(1517))%>
+                            <div class="col-md-2 col-sm-3 col-xs-6">
+                                <div class="plist clearfix">
+                                    <a href="javascript:;" class="clearfix">
+                                        <div class="picbox">
+                                            <div class="pic imgss text-center" style="background: #fff; overflow:hidden;">
+                                                <img src="{modelt.thumb_path}" alt="" style="max-height: 100%; max-width: 100%;">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <%/foreach%>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+        <!--新闻动态-->
+        <div class="news-wrap">
+            <div class="container-fluid">
+                <div class="title-line">
+                    <img src="<%templateskin%>/images/index-tit5.png" alt="">
+                </div>
+                <div class="news-con">
+                    <div class="row">
+                        <div class="col-md-5 col-sm-12 col-xs-12">
+                            <div class="bnlist clearfix">
+                                <%set DataTable n_list=get_article_list("news",1,"status=0 and is_hot=1")%>
+                                <%loop n_adder n_list%>
+                                <a href='<%linkurl("newss",{n_adder[id]})%>#main'>
+                                    <div class="picbox">
+                                        <div class="pic" style="background: url({n_adder[img_url]}) no-repeat center center; background-size: cover;"></div>
+                                    </div>
+                                    <div class="conbox">
+                                        <div class="tit">{n_adder[title]}</div>
+                                        <div class="con">{n_adder[zhaiyao]}... </div>
+                                        <div class="mbtn clearfix">
+                                            <div class="m1 lt">发布：<%datetostr({n_adder[add_time]},yyyy-MM-dd)%></div>
+                                            <div class="hidden-sm hidden-xs m2 lt">更多新闻</div>
+                                            <div class="add rt">+</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <%/loop%>
+                            </div>
+                        </div>
+                        <div class="col-md-7 col-sm-12 col-xs-12">
+                            <div class="nlistbox clearfix">
+                                <%set DataTable n1_list=get_article_list("news",4,"status=0 and is_red=1")%>
+                                <%loop n1_adder n1_list%>
+                                <div class="nlist clearfix">
+                                    <a href='<%linkurl("newss",{n1_adder[id]})%>#main' class="clearfix">
+                                        <div class="timebox"><span><%datetostr({n1_adder[add_time]},dd)%></span><%datetostr({n1_adder[add_time]},yyyy-MM)%></div>
+                                        <div class="hidden-sm hidden-xs line"></div>
+                                        <div class="conbox">
+                                            <div class="tit">{n1_adder[title]}</div>
+                                            <div class="con">{n1_adder[zhaiyao]}</div>
+                                        </div>
+                                        <div class="hidden-sm hidden-xs add">+</div>
+                                    </a>
+                                </div>
+                                <%/loop%>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%template src="_footer.html"%>
+</body>
+</html>
